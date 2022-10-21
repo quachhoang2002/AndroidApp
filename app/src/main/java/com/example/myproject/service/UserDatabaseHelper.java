@@ -39,6 +39,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_STATUS + " INTEGER DEFAULT 0" +
                 ");";
         Log.d("query", query);
+        Log.d("query", "onCreate: " + query);
         sqLiteDatabase.execSQL(query);
     }
 
