@@ -2,9 +2,11 @@ package com.example.myproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myproject.R;
@@ -13,7 +15,8 @@ import com.example.myproject.service.UserDatabaseHelper;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText username, password, email, phone,confirm_password;
-    Button register ,login;
+    Button register ;
+    TextView sign_in_nav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +28,16 @@ public class RegisterActivity extends AppCompatActivity {
         phone = findViewById(R.id.phone);
         confirm_password = findViewById(R.id.confirm_password);
         register = findViewById(R.id.register_button);
-        login = findViewById(R.id.login_button);
+        sign_in_nav = findViewById(R.id.sign_in_nav);
         register.setOnClickListener(v -> {
             //register
             registerOnClick();
         });
-
+        sign_in_nav.setOnClickListener(v -> {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
     }
 

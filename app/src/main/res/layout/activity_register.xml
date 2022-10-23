@@ -130,6 +130,7 @@
         android:layout_centerHorizontal="true"
         android:text="Sign In"
         android:textColor="#9670BE"
+        android:id="@+id/sign_in_nav"
         android:textSize="15dp" />
 
 
